@@ -1,6 +1,9 @@
-<app-header></app-header>
+<app-header (featureSelected)=onNevigate($event)></app-header>
 <div class="container">
-<h1>i am working</h1>
-<app-recipes></app-recipes>
-<app-shopping-list></app-shopping-list>
+    <div class="row">
+        <div class="col-md-24">
+                <app-recipes *ngIf="loadedFeature === 'recipe' "></app-recipes>
+                <app-shopping-list *ngIf="loadedFeature !== 'recipe' "></app-shopping-list>
+        </div>
+    </div>
 </div>
